@@ -1,0 +1,3 @@
+pip install minio
+pip install minio-py-sdk
+pip install pymysql
