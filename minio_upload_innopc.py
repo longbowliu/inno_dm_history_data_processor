@@ -24,13 +24,10 @@ def calculate_md5(file_path):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
-def upload_file_to_minio(minio_server, access_key, secret_key, bucket_name, object_name, file_path, secure=False, chunk_size=64 * 1024 * 1024):
+def upload_file_to_minio(bucket_name, object_name, file_path, secure=False, chunk_size=64 * 1024 * 1024):
     """
     上传文件到 MinIO 服务器
 
-    :param minio_server: MinIO 服务器地址
-    :param access_key: 访问密钥
-    :param secret_key: 秘密密钥
     :param bucket_name: 存储桶名称
     :param object_name: 对象名称（上传后的文件名）
     :param file_path: 本地文件路径
@@ -38,6 +35,9 @@ def upload_file_to_minio(minio_server, access_key, secret_key, bucket_name, obje
     :param chunk_size: 分块大小（默认 64MB）
     :return: None
     """
+    minio_server = "localhost:9000"
+    access_key = "LjpIoEnrisuMBq6T"
+    secret_key = "HZ9iClAqIgbPg71nZGKr48oiDO4TtCPc"
     # 检查本地文件是否存在
     if not os.path.exists(file_path):
         logger.error(f"本地文件不存在: {file_path}")
@@ -96,25 +96,48 @@ def upload_file_to_minio(minio_server, access_key, secret_key, bucket_name, obje
                 ))
                 connection.commit()
                 logger.info(f"数据插入成功: {file_name}")
+                return unique_id
+        except pymysql.err.IntegrityError as e:
+            if "Duplicate entry" in str(e) and "uk_md5" in str(e):
+                logger.warning(f"MD5 值已存在，查询对应 ID")
+                try:
+                    with connection.cursor() as cursor:
+                        sql = "SELECT id FROM dm_attach WHERE md5 = %s"
+                        cursor.execute(sql, (file_md5,))
+                        result = cursor.fetchone()
+                        if result:
+                            logger.info(f"查询到重复 MD5 对应的 ID: {result[0]}")
+                            return result[0]
+                        else:
+                            logger.error(f"未找到重复 MD5 对应的记录")
+                            return None
+                except Exception as e:
+                    logger.error(f"查询重复 MD5 失败: {e}")
+                    return None
+            else:
+                logger.error(f"数据库插入失败: {e}")
+                return None
         except Exception as e:
             logger.error(f"数据库插入失败: {e}")
-            return
+            return None
         finally:
             if connection:
                 connection.close()
     except S3Error as e:
         logger.error(f"上传失败: {e}")
+        return None
     except Exception as e:
         logger.error(f"发生未知错误: {e}")
+        return None
+
+# 初始化 SnowflakeIDGenerator
+id_generator = SnowflakeIDGenerator(worker_id=1)
 
 # 示例用法
 if __name__ == "__main__":
-    id_generator = SnowflakeIDGenerator(worker_id=1)
     upload_file_to_minio(
-        minio_server="localhost:9000",
-        access_key="LjpIoEnrisuMBq6T",
-        secret_key="HZ9iClAqIgbPg71nZGKr48oiDO4TtCPc",
         bucket_name="inno-pc",
         object_name="C-B23-E-1-FK-DFT-12.inno_pc",
         file_path="/home/demo/C-B23-E-1-FK-DFT-12.inno_pc"
+        
     )
