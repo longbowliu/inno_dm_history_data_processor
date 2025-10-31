@@ -154,7 +154,8 @@
   ->[static_map], size=0 , detail: []
   ->[ParamServer], size=1 , detail: ['default']
   ->[Lidar2], size=1 , detail: ['default']
-  ->[event_gt], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[static_map], size=0 , detail: []
   ->[Fusion], size=1 , detail: ['default']
   ->[Flatten], size=0 , detail: []
 
