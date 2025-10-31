@@ -1,0 +1,255 @@
+[信息] NAS 挂载成功: //172.16.98.52/inno_test_storage -> /mnt
+
+[信息] 未处理文件: /mnt/AIDataSet/SZJG_0506_2_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_3H
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_RW_S_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B24_0722_2_RE1X_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B18_001_2_FK_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N1_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A10_005_2_RW_S_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/GxxGZ_0319_4_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/A13_005_2_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_-1H
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B18_001_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/QLG_001_2_FK_PI
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N2_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A24_001_2_FK_S_AD
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/smoke_vl
+   -> TestData 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N2_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B09_001_2_RW_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S1_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/GxxWuxi_0409_4_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E1_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S2_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/JHGS_001_2_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B26_004_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N1_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N1_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B14_001_2_FK_S_ADV
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B15_001_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W2_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E1_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E1_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E2_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W1_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/QLG_001_2_FK_PR
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/smoke_hw
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_FK_S_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B08_001_2_RW_S_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A10_005_2_FK_S_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S2_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_2H
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_1H
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B18_001_2_RW_A_AD
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B18_001_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A01_001_2_FK_S
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B21_002_2_FK_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B21_001_2_FK_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B09_001_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A10_005_2_RW_S_AD_NEW_MATRIX
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W1_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W1_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B05_001_2_RW_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S2_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B27_001_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B21_002_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B15_001_2_FK_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/QLG_001_2_FK_S
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_N2_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S1_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E2_2_RW_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_S1_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/A10_001_2_FK_PR
+   -> InnoPCClient 
+   -> scene_config.yaml 
+
+[信息] 未处理文件: /mnt/AIDataSet/B24_001_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B25_003_2_RE1X_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B07_001_2_FK_S_ADV
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W2_2_RE1X_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_E2_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 
+
+[信息] 未处理文件: /mnt/AIDataSet/B23_W2_2_FK_S
+   -> InnoPCClient 
+   -> fusion_cubiao.zip 

@@ -1,0 +1,804 @@
+[信息] NAS 挂载成功: //172.16.98.52/inno_test_storage -> /mnt
+
+[信息] meta group 分析: /mnt/AIDataSet/SZJG_0506_2_FK_PR
+  ->[Lidar1], size=1 , detail: ['FK_SZJG_0506_48_250']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['FK_SZJG_0506_48_250']
+  ->[Lidar2], size=1 , detail: ['FK_SZJG_0506_48_250']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_3H
+  ->[Lidar1], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Lidar2], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[event_gt], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Fusion], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_RW_S_AD
+  ->[Lidar1], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Lidar2], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[event_gt], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Fusion], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B24_0722_2_RE1X_PR
+  ->[Lidar1], size=1 , detail: ['RE_B24_50_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['RE_B24_50_150']
+  ->[Lidar2], size=1 , detail: ['RE_B24_50_150']
+  ->[BoxFilterROI], size=1 , detail: ['RE_B24_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B18_001_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N1_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_RW_S_AD
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/GxxGZ_0319_4_FK_PR
+  ->[Lidar1], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[Lidar3], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[BoxFilterROI], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Lidar4], size=1 , detail: ['FK_Gxx_GZ_50_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A13_005_2_FK_PR
+  ->[Lidar1], size=5 , detail: ['FK_A13_100_100', '50_150', 'FK_A13_200_200', 'FK_A13_150_150', 'FK_A13_50_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=4 , detail: ['FK_A13_100_100', 'FK_A13_200_200', 'FK_A13_150_150', 'FK_A13_50_150']
+  ->[Lidar2], size=5 , detail: ['FK_A13_100_100', '50_150', 'FK_A13_200_200', 'FK_A13_150_150', 'FK_A13_50_150']
+  ->[BoxFilterROI], size=1 , detail: ['FK_A13_50_150']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_-1H
+  ->[Lidar1], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Lidar2], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[event_gt], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Fusion], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B18_001_2_RE1X_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_RW_S_AD_1057
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/QLG_001_2_FK_PI
+  ->[Lidar1], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Lidar2], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N2_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A24_001_2_FK_S_AD
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_882
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/smoke_vl
+  ->[Lidar1], size=1 , detail: ['qlg']
+  ->[Lidar2], size=1 , detail: ['qlg']
+  ->[Fusion], size=2 , detail: ['qlg_north', 'qlg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N2_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B09_001_2_RW_PR
+  ->[Lidar1], size=1 , detail: ['RW_B09_100_100']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['RW_B09_100_100']
+  ->[Lidar2], size=1 , detail: ['RW_B09_100_100']
+  ->[BoxFilterROI], size=1 , detail: ['RW_B09_100_100']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S1_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/GxxWuxi_0409_4_FK_PR
+  ->[Lidar1], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[Lidar3], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[BoxFilterROI], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Lidar4], size=1 , detail: ['FK_Gxx_Wuxi_50_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E1_2_RE1X_S_883
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_865
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[event_gt], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E1_2_RE1X_S_1057
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E1_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S2_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/JHGS_001_2_FK_PR
+  ->[Lidar1], size=1 , detail: ['jhgs_180_70']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['jhgs_180_70']
+  ->[Lidar2], size=1 , detail: ['jhgs_180_70']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/smoke_data
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_864
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[event_gt], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B26_004_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_863
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[event_gt], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N1_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N1_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B14_001_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B15_001_2_RW_S
+  ->[Lidar1], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Lidar2], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[event_gt], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Fusion], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W2_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E1_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E1_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_867
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_RW_S_AD_883
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B21_002_1_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E2_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W1_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/QLG_001_2_FK_PR
+  ->[Lidar1], size=4 , detail: ['qlg_50_150', 'qlg_200_200', 'default', 'test']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Lidar2], size=4 , detail: ['qlg_50_150', 'qlg_200_200', 'default', 'test']
+  ->[BoxFilterROI], size=1 , detail: ['qlg_50_150']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/smoke_hw
+  ->[Lidar1], size=1 , detail: ['hw']
+  ->[Lidar2], size=1 , detail: ['hw']
+  ->[Fusion], size=2 , detail: ['hw', 'hw_test']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD
+  ->[Lidar1], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Lidar2], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[event_gt], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Fusion], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B08_001_2_RW_S_AD
+  ->[Lidar1], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Lidar2], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[event_gt], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Fusion], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_FK_S_AD
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S2_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_874
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_2H
+  ->[Lidar1], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Lidar2], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[event_gt], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Fusion], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_1H
+  ->[Lidar1], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Lidar2], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[event_gt], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Fusion], size=5 , detail: ['multi_ad_5', 'FK_A12_100_100', 'default', 'FK_A12_200_200', 'FK_A12_150_150']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B18_001_2_RW_A_AD
+  ->[Lidar1], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Lidar2], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[event_gt], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Fusion], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B18_001_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A01_001_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B21_002_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B21_001_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B09_001_2_RW_S
+  ->[Lidar1], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Lidar2], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[event_gt], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Fusion], size=5 , detail: ['advance_wo_cluster', 'default', 'center_road', 'advance', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_874
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_RW_S_AD_NEW_MATRIX
+  ->[Lidar1], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Lidar2], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[event_gt], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Fusion], size=3 , detail: ['default', 'center_road', '45deg']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W1_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W1_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B05_001_2_RW_PR
+  ->[Lidar1], size=2 , detail: ['RW_B05_70_70', 'RW_B05_100_100']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['RW_B05_70_70', 'RW_B05_100_100']
+  ->[Lidar2], size=2 , detail: ['RW_B05_70_70', 'RW_B05_100_100']
+  ->[BoxFilterROI], size=1 , detail: ['RW_B05_100_100']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_1057
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_1_FK_S_AD
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S2_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_867
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[event_gt], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_883
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B06_001_2_FK_RW_AD
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B27_001_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_883
+  ->[Lidar1], size=1 , detail: ['multi_ad_5']
+  ->[static_map], size=1 , detail: ['multi_ad_5']
+  ->[ParamServer], size=1 , detail: ['multi_ad_5']
+  ->[Lidar2], size=1 , detail: ['multi_ad_5']
+  ->[event_gt], size=1 , detail: ['multi_ad_5']
+  ->[Fusion], size=1 , detail: ['multi_ad_5']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B21_002_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_866
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[event_gt], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_866
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B15_001_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/QLG_001_2_FK_S
+  ->[Lidar1], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Lidar2], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[event_gt], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Fusion], size=2 , detail: ['qlg_50_150', 'qlg_200_200']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_1057
+  ->[Lidar1], size=1 , detail: ['multi_ad_5']
+  ->[static_map], size=1 , detail: ['multi_ad_5']
+  ->[ParamServer], size=1 , detail: ['multi_ad_5']
+  ->[Lidar2], size=1 , detail: ['multi_ad_5']
+  ->[event_gt], size=1 , detail: ['multi_ad_5']
+  ->[Fusion], size=1 , detail: ['multi_ad_5']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_N2_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_005_2_RW_S_AD_882
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_875
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=1 , detail: ['default']
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S1_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E2_2_RW_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_S1_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR_875
+  ->[Lidar1], size=1 , detail: ['FK_A10_50_150']
+  ->[static_map], size=1 , detail: ['FK_A10_50_150']
+  ->[ParamServer], size=1 , detail: ['FK_A10_50_150']
+  ->[Lidar2], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=0 , detail: []
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A10_001_2_FK_PR
+  ->[Lidar1], size=3 , detail: ['FK_A10_50_150', '50_150', 'FK_A10_200_200']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['FK_A10_50_150', 'FK_A10_200_200']
+  ->[Lidar2], size=3 , detail: ['FK_A10_50_150', '50_150', 'FK_A10_200_200']
+  ->[BoxFilterROI], size=1 , detail: ['FK_A10_50_150']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B24_001_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B25_003_2_RE1X_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B07_001_2_FK_S_ADV
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W2_2_RE1X_S
+  ->[Lidar1], size=2 , detail: ['center_road_adv', 'default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=2 , detail: ['center_road_adv', 'default']
+  ->[Lidar2], size=2 , detail: ['center_road_adv', 'default']
+  ->[event_gt], size=2 , detail: ['center_road_adv', 'default']
+  ->[Fusion], size=2 , detail: ['center_road_adv', 'default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_E2_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/A12_001_2_FK_S_AD_882
+  ->[Lidar1], size=1 , detail: ['multi_ad_5']
+  ->[static_map], size=1 , detail: ['multi_ad_5']
+  ->[ParamServer], size=1 , detail: ['multi_ad_5']
+  ->[Lidar2], size=1 , detail: ['multi_ad_5']
+  ->[event_gt], size=1 , detail: ['multi_ad_5']
+  ->[Fusion], size=1 , detail: ['multi_ad_5']
+  ->[Flatten], size=0 , detail: []
+
+[信息] meta group 分析: /mnt/AIDataSet/B23_W2_2_FK_S
+  ->[Lidar1], size=1 , detail: ['default']
+  ->[static_map], size=0 , detail: []
+  ->[ParamServer], size=1 , detail: ['default']
+  ->[Lidar2], size=1 , detail: ['default']
+  ->[event_gt], size=1 , detail: ['default']
+  ->[Fusion], size=1 , detail: ['default']
+  ->[Flatten], size=0 , detail: []

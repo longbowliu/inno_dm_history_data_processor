@@ -23,6 +23,22 @@ def calculate_md5(file_path):
         for chunk in iter(lambda: f.read(4096), b""):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
+def get_db_connection():
+    """
+    获取数据库连接
+    :return: 数据库连接对象
+    """
+    try:
+        return pymysql.connect(
+            host="172.16.210.98",
+            port=3308,
+            user="root",
+            password="root",
+            database="data_management_20250612"
+        )
+    except Exception as e:
+        logger.error(f"获取数据库连接失败: {e}")
+        return None
 
 def upload_file_to_minio(bucket_name, object_name, file_path, secure=False, chunk_size=64 * 1024 * 1024):
     """
@@ -62,18 +78,12 @@ def upload_file_to_minio(bucket_name, object_name, file_path, secure=False, chun
         with open(file_path, "rb") as file_data:
             client.put_object(bucket_name, object_name, file_data, file_size, part_size=chunk_size)
         logger.info(f"文件上传成功: {object_name} 到存储桶 {bucket_name}")
-        
         # 插入数据库
-        connection = None
+        connection = get_db_connection()
+        if not connection:
+            return None
+
         try:
-            connection = pymysql.connect(
-                host="172.16.210.98",
-                port=3308,
-                user="root",
-                password="root",
-                database="data_management_20250612"
-            )
-            
             with connection.cursor() as cursor:
                 # 提取文件名和扩展名
                 file_name = os.path.basename(file_path)
@@ -136,7 +146,7 @@ id_generator = SnowflakeIDGenerator(worker_id=1)
 # 示例用法
 if __name__ == "__main__":
     upload_file_to_minio(
-        bucket_name="inno-pc",
+        bucket_name="innopc20250616",
         object_name="C-B23-E-1-FK-DFT-12.inno_pc",
         file_path="/home/demo/C-B23-E-1-FK-DFT-12.inno_pc"
         
