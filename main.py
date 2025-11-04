@@ -4,8 +4,9 @@ import yaml  # 需要安装 PyYAML: pip install pyyaml
 import csv
 import json
 import requests
-from minio_upload_innopc import upload_file_to_minio 
-from minio_upload_innopc import get_db_connection
+from minio_upload_innopc import upload_file_to_minio ,id_generator
+from minio_upload_innopc import get_db_connection, get_sl_connection
+
 
 # ======================
 # 1. 配置部分
@@ -279,7 +280,12 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         "metas": [],
         "sceneId": scene_id
     }
-    # 1. event_gt/default/stop_bar.csv
+    # 1. 查找所有子目录中的 .zip 文件
+    zip_files = glob.glob(os.path.join(dataset_dir, "**", "*.zip"), recursive=True)
+    if zip_files:
+        print(f"[信息] 找到以下 .zip 文件: {zip_files}")
+    else:
+        print("[⚠️] 未找到 .zip 文件")
 
     # 2. Flatten/*.yaml
     flatten_yaml = glob.glob(os.path.join(dataset_dir, "Flatten", "*.yaml"))
@@ -297,10 +303,21 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
     
 
     # 3. Fusion/default/*.yaml
-    fusion_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", group_name, "*.yaml"))
+    fusion_zone_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", group_name, "*.yaml"))
+    fusion_zone_id = None
+    if  fusion_zone_yaml:
+        fusion_zone_id = upload_meta_file_get_attach_id( fusion_zone_yaml[0])
+        
+    if fusion_zone_id:
+        fusion_zone_json =  {
+        "attachId": fusion_zone_id,
+        "type": "fusion_zone"
+        }       
+        meta_group_data["metas"].append(fusion_zone_json)
+        
+        
     fusion_yaml_id = None
-    if not fusion_yaml:
-        fusion_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", "*.yaml"))
+    fusion_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", "*.yaml"))
     if fusion_yaml:
         fusion_yaml_id = upload_meta_file_get_attach_id(fusion_yaml[0])
     else:
@@ -345,7 +362,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         lidar2_roi_json =  {
         "attachId": lidar2_roi_id,
         "type": "lidar_zone",       
-        "innopcId": innopc_ids[1] if len(innopc_ids) >1 else None
+        "innopcId": innopc_ids[1] if innopc_ids and len(innopc_ids) >1 else None
         }
         meta_group_data["metas"].append(lidar2_roi_json)
 
@@ -424,13 +441,189 @@ def process_dataset(dataset_name ,dataset_dir):
     
     lidar1_path = os.path.join(dataset_dir, "Lidar1")
     # 遍历 Lidar1 下的所有文件夹，每个文件夹作为一个 group_name !!!
-    group_names = [d for d in os.listdir(lidar1_path) if os.path.isdir(os.path.join(lidar1_path, d))]
-    for group_name in group_names:
+    meta_group_names = [d for d in os.listdir(lidar1_path) if os.path.isdir(os.path.join(lidar1_path, d))]
+    group_id_default = None
+    group_id = None
+    # GT 默认关联default meta_group, 根据分析,每个数据集中只存在一个GT zip 文件(一般存在于 dataset_dir/或者 dataset_dir/Fusion/ 下) 
+    # 如果不存在default group，则意味着只有一组meta_group，关联GT数据到该group_id
+    group_records = [] 
+    for group_name in meta_group_names:
         print(f"[信息] 处理分组: {group_name}")
         upload_metadata_to_scene(innopc_ids,scene_id,dataset_dir,dataset_name ,group_name)
+        group_id = find_group_id_by_name_and_scene_id(scene_id, group_name)
+        group_records.append((group_name, group_id))
+        if group_name == "default" :
+            group_id_default = group_id
+    if group_id_default:
+        group_id = group_id_default
+    requirement_id = create_requirements( dataset_name, group_id, scene_id)
+    
+    zip_files = glob.glob(os.path.join(dataset_dir, "**", "*.zip"), recursive=True)
+    if zip_files:
+        print(f"[信息] 找到以下 .zip 文件: {zip_files}")
+        gt_file = zip_files[0]
+       
+        
+        
+        upload_gt(gt_file,requirement_id)
+    else:
+        print("[⚠️] 未找到 .zip GT文件")
+
+        
+    
+    for group_name, group_id in group_records:
+        event_zip = glob.glob(os.path.join(dataset_dir, "event_gt", group_name, "*.csv"))
+        upload_event_by_group()
+            
+
+
+def upload_gt(gt_file, requirement_id):
+    """
+    上传 GT 文件到后端接口
+    :param file: GT zip文件路径
+    :param requirement_id: 需求 ID
+    :return: 上传结果（成功或失败）
+    """
+    print(f"\n🔧 [上传 GT 文件] 文件: {gt_file}, 需求 ID: {requirement_id}")
+    # bucket_name = "gt-files"
+    file_name = os.path.basename(gt_file)
+    
+    try:
+
+        # 构造 multipart/form-data 请求
+        url = "http://localhost/dmapi/perception-truth/upload"
+        data = {
+            "requirementId": requirement_id,
+            "boxCount": -1,
+            "frameCount": -1
+        }
+        
+        with open(gt_file, 'rb') as f:
+            files = {'file': (file_name, f, 'application/zip')}
+            response = requests.post(url, data=data, files=files)
+            print(response.text)
+            print(f"[信息] 状态码: {response.status_code}")
+            if response.status_code == 200:
+                print("[信息] GT 文件提交成功")
+                return True
+            else:
+                print(f"[错误] GT 文件提交失败，状态码: {response.status_code}")
+                return False
+
+        
+    except Exception as e:
+        print(f"[错误] GT 文件上传或提交失败: {e}")
+        return False
+        
+
+def upload_event_by_group():
+    print("\n🔧 [上传 Event GT 文件 demo]")
         
     return
-   
+
+def create_requirements(dataset_name, group_id, scene_id):
+    '''
+    插入数据到 ad_sl_requirement 和 dm_requirement_scene_group 表中
+    '''
+    if not group_id or not scene_id:
+        print("[错误] 无效的 group ID 或 scene ID，无法创建需求文件")
+        return
+    requirement_id = None
+    requirement_scene_group_id = None
+    # 获取数据库连接
+    connection = get_sl_connection()
+    if not connection:
+        print("[错误] 无法获取数据库连接")
+        return
+
+    try:
+        with connection.cursor() as cursor:
+            # 插入数据到 ad_sl_requirement 表
+            requirement_sql = """
+                INSERT INTO ad_sl_requirement (name, config_id, priority, simpl_version, lost_info, create_time, update_time)
+                VALUES (%s, %s, %s, %s, %s, NOW(), NOW())
+            """
+            cursor.execute(requirement_sql, (
+                f"{dataset_name}_demand",  # name
+                "1792801536928169986",     # config_id
+                3,                          # priority
+                "SIMPL_2_6",               # simpl_version
+                None                        # lost_info
+            ))
+            requirement_id = cursor.lastrowid
+            print(f"[信息] 插入 ad_sl_requirement 表成功，ID: {requirement_id}")
+        # 提交事务
+        connection.commit()
+        print("[信息] 需求文件创建成功")
+
+    except Exception as e:
+        print(f"[错误] 数据库操作失败: {e}")
+        if connection:
+            connection.rollback()
+    finally:
+        if connection:
+            connection.close()   
+            
+     # 获取数据库连接
+    connection = get_db_connection()
+    if not connection:
+        print("[错误] 无法获取数据库连接")
+        return
+
+    try:
+        with connection.cursor() as cursor:
+            # 插入数据到 ad_sl_requirement 表
+
+            # 插入数据到 dm_requirement_scene_group 表
+            requirement_scene_group_sql = """
+                INSERT INTO dm_requirement_scene_group (id, requirement_id, scene_id, group_id, create_time, update_time)
+                VALUES (%s, %s, %s, %s, NOW(), NOW())
+            """
+            cursor.execute(requirement_scene_group_sql, (
+                id_generator.generate_id(),  # id
+                requirement_id,    # requirement_id
+                scene_id,          # scene_id
+                group_id           # group_id
+            ))
+            print("[信息] 插入 dm_requirement_scene_group 表成功")
+
+        # 提交事务
+        connection.commit()
+        print("[信息] 需求文件创建成功")
+        return requirement_id
+
+    except Exception as e:
+        print(f"[错误] 数据库操作失败: {e}")
+        if connection:
+            connection.rollback()
+    finally:
+        if connection:
+            connection.close()   
+        
+        
+def find_group_id_by_name_and_scene_id(scene_id, group_name):
+    connection = get_db_connection()
+    if not connection:
+        return None
+    try:
+        with connection.cursor() as cursor:
+            sql = "SELECT id FROM dm_group WHERE scene_id = %s AND name = %s ORDER BY create_time DESC LIMIT 1"
+            cursor.execute(sql, (scene_id, group_name))
+            result = cursor.fetchone()
+            if result:
+                group_id = result[0]
+                print(f"[信息] 元数据分组 ID: {group_id}")
+                return group_id
+            else:
+                print("[错误] 未找到元数据分组记录")
+                return None
+    except Exception as e:
+        print(f"[错误] 查询元数据分组 ID 失败: {e}")
+        return None
+    finally:
+        if connection:
+            connection.close()
+            
 
 def check_inno_pc_files(dataset_dir,dest_file="innopc_empty.txt"):
     """
@@ -484,77 +677,7 @@ def meta_group_analysis(dataset_path):
 # 5. 主入口
 # ======================
 def main():
-    '''
-    demo@demo-OMEN-by-HP-Laptop-16-b0xxx:/mnt/AIDataSet$ tree
-    .
-    ├── A01_001_2_FK_S
-    │   ├── event_gt
-    │   │   └── default
-    │   │       └── stop_bar.csv
-    │   ├── Flatten
-    │   │   └── 01_parallel_0114_A01_falcon.yaml
-    │   ├── Fusion
-    │   │   ├── default
-    │   │   │   └── stopbar_ad_A01.yaml
-    │   │   └── fusion_matrix_0114_A01_falcon.yaml
-    │   ├── fusion_cubiao.zip
-    │   ├── Lidar1
-    │   │   ├── default
-    │   │   │   └── lidar1_loop_0114_A01_falcon.yaml
-    │   │   └── P-A01-11-FK-DFT-001.inno_pc
-    │   ├── Lidar2
-    │   │   ├── default
-    │   │   │   └── lidar2_loop_0114_A01_falcon.yaml
-    │   │   └── P-A01-12-FK-DFT-001.inno_pc
-    │   ├── ParamServer
-    │   │   └── default
-    │   │       ├── params_multi.yaml
-    │   │       └── params.yaml
-    │   └── static_map
-    │       └── static_5_result.pcd
-    ├── A10_001_2_FK_PR
-    │   ├── BoxFilterROI
-    │   │   └── FK_A10_50_150
-    │   │       └── Box_filter_ROI_A10_PR_0820.yaml
-    │   ├── Flatten
-    │   │   └── Ground_alignment_A10_FK.yaml
-    │   ├── Fusion
-    │   │   ├── default
-    │   │   ├── fusion_matrix_A10_FK.yaml
-    │   │   └── gt.zip
-    │   ├── InnoPCClient
-    │   │   └── inno_pc_client
-    │   ├── Lidar1
-    │   │   ├── 50_150
-    │   │   │   └── lidar1_roi_center_road_A10_FK_analyse.yaml
-    │   │   ├── FK_A10_200_200
-    │   │   │   └── lidar1_roi_200_200.yaml
-    │   │   ├── FK_A10_50_150
-    │   │   │   └── lidar1_roi_center_road_A10_FK_upload.yaml
-    │   │   └── P-A10-11-FK-DFT-001-validation.inno_pc
-    │   ├── Lidar2
-    │   │   ├── 50_150
-    │   │   │   └── lidar2_roi_center_road_A10_FK_analyse.yaml
-    │   │   ├── FK_A10_200_200
-    │   │   │   └── lidar2_roi_200_200.yaml
-    │   │   ├── FK_A10_50_150
-    │   │   │   └── lidar2_roi_center_road_A10_FK_upload.yaml
-    │   │   └── P-A10-12-FK-DFT-001-validation.inno_pc
-    │   ├── ParamServer
-    │   │   ├── FK_A10_200_200
-    │   │   │   ├── params_multi.yaml
-    │   │   │   └── params.yaml
-    │   │   └── FK_A10_50_150
-    │   │       ├── params_multi.yaml
-    │   │       └── params.yaml
-    │   ├── scene_config.yaml
-    │   └── static_map
-    │       └── static_5_result.pcd
-    ├── A10_001_2_FK_PR_1057
-    ......
-
-    '''
-
+   
     # 1. 挂载 NAS
     # if not mount_nas():
     #     return

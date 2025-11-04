@@ -39,6 +39,23 @@ def get_db_connection():
     except Exception as e:
         logger.error(f"获取数据库连接失败: {e}")
         return None
+    
+def get_sl_connection():
+    """
+    获取数据库连接
+    :return: 数据库连接对象
+    """
+    try:
+        return pymysql.connect(
+            host="172.16.210.98",
+            port=3308,
+            user="root",
+            password="root",
+            database="sl_20250612"
+        )
+    except Exception as e:
+        logger.error(f"获取数据库连接失败: {e}")
+        return None
 
 def upload_file_to_minio(bucket_name, object_name, file_path, secure=False, chunk_size=64 * 1024 * 1024):
     """
