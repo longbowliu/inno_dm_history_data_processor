@@ -1,27 +1,26 @@
-[信息] NAS 挂载成功: //172.16.98.52/inno_test_storage -> /mnt
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_005_2_RW_S_AD_1057
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_882
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/B23_E1_2_RE1X_S_883
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_865
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/B23_E1_2_RE1X_S_1057
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/smoke_data
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_864
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_863
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_867
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_005_2_RW_S_AD_883
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/B21_002_1_RE1X_S_ADV
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_874
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_874
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_1057
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_1_FK_S_AD
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_867
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_883
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/B06_001_2_FK_RW_AD
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_883
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_866
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_866
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_1057
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_005_2_RW_S_AD_882
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_875
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A10_001_2_FK_PR_875
-[跳过] 空目录或者缺失 innopc 文件: /mnt/AIDataSet/A12_001_2_FK_S_AD_882
+A10_005_2_RW_S_AD_1057
+A10_001_2_FK_PR_882
+B23_E1_2_RE1X_S_883
+A10_001_2_FK_PR_865
+B23_E1_2_RE1X_S_1057
+smoke_data
+A10_001_2_FK_PR_864
+A10_001_2_FK_PR_863
+A12_001_2_FK_S_AD_867
+A10_005_2_RW_S_AD_883
+B21_002_1_RE1X_S_ADV
+A12_001_2_FK_S_AD_874
+A10_001_2_FK_PR_874
+A10_001_2_FK_PR_1057
+A12_001_1_FK_S_AD
+A10_001_2_FK_PR_867
+A10_001_2_FK_PR_883
+B06_001_2_FK_RW_AD
+A12_001_2_FK_S_AD_883
+A10_001_2_FK_PR_866
+A12_001_2_FK_S_AD_866
+A12_001_2_FK_S_AD_1057
+A10_005_2_RW_S_AD_882
+A12_001_2_FK_S_AD_875
+A10_001_2_FK_PR_875
+A12_001_2_FK_S_AD_882

@@ -186,91 +186,7 @@ def upload_meta_file_get_attach_id(file_path):
         print(f"[错误] 上传文件 {file_path} 失败: {e}")
         return None
 def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group_name):
-    '''
-    上传元数据到场景
-    /data/test/QLG_001_2_FK_PR$ tree
-    .
-    ├── BoxFilterROI
-    │   └── qlg_50_150
-    │       └── Box_filter_ROI_QLG_PR_0820.yaml
-    ├── Flatten
-    │   └── 01Parallel.yaml
-    ├── Fusion
-    │   ├── 1716455427_40s_gt.zip
-    │   ├── default
-    │   └── fusion.yaml
-    ├── Lidar1
-    │   ├── default
-    │   │   └── qlg_lidar1_roi.yaml
-    │   ├── LIDAR_220_18000MB_1716454815C050_6550.inno_pc
-    │   ├── qlg_200_200
-    │   │   └── qlg_lidar1_roi_modified_200_200_fusion_V2.4.yaml
-    │   ├── qlg_50_150
-    │   │   └── qlg_lidar1_roi_fusion_V2.0.yaml
-    │   └── test
-    │       └── qlg_lidar1_roi.yaml
-    ├── Lidar2
-    │   ├── default
-    │   │   └── qlg_lidar2_roi.yaml
-    │   ├── LIDAR_221_18000MB_1716454815_6050_6550.inno_pc
-    │   ├── qlg_200_200
-    │   │   └── qlg_lidar2_roi_modified_200_200_fusion_V2.4.yaml
-    │   ├── qlg_50_150
-    │   │   └── qlg_lidar2_roi_fusion_V2.0.yaml
-    │   └── test
-    │       └── qlg_lidar2_roi.yaml
-    ├── ParamServer
-    │   ├── qlg_200_200
-    │   │   ├── params_multi.yaml
-    │   │   └── params.yaml
-    │   └── qlg_50_150
-    │       ├── params_multi.yaml
-    │       └── params.yaml
-    ├── scene_config.yaml
-    └── static_map
-        └── static_5_result.pcd
-
-    19 directories, 20 files
-
-        封装成的json如下 
-        {
-        "name": "QLG_001_2_FK_PR_MetaGroup_qlg_50_150",
-        "metaIds": [],
-        "metas": [
-            {
-            "attachId": "1983771157453922306",
-            "type": "lidar_zone",
-            "innopcId": "1983766189883842561"
-            },
-            {
-            "attachId": "1983771214299324417",
-            "type": "lidar_zone",
-            "innopcId": "1983766189892231169"
-            },
-            {
-            "attachId": "1983771357232816131",
-            "type": "flatten"
-            },
-            {
-            "attachId": "1983771433812418562",
-            "type": "fusion"
-            },
-            {
-            "attachId": "1983771564121055234",
-            "type": "params"
-            },
-            {
-            "attachId": "1983771633033469954",
-            "type": "label_zone"
-            },
-            {
-            "attachId": "1983771705087418370",
-            "type": "static_map_pcd"
-            }
-        ],
-        "sceneId": "1983766189875453953"
-        }
-    '''
+    print(f"\n🔧 每一个meta group 除了自己的配置外还需要加载其他共用的基础配置，比如拉平、融合等。如果没有该分组，则该配置会作为共用配置")
     if not scene_id:
         print("[错误] 无效的场景 ID，无法上传元数据")
         return
@@ -302,7 +218,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         meta_group_data["metas"].append(flatten_yaml_json)
     
 
-    # 3. Fusion/default/*.yaml
+    # 3. Fusion/**/*.yaml
     fusion_zone_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", group_name, "*.yaml"))
     fusion_zone_id = None
     if  fusion_zone_yaml:
@@ -315,7 +231,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         }       
         meta_group_data["metas"].append(fusion_zone_json)
         
-        
+    # Fusion/*.yaml    
     fusion_yaml_id = None
     fusion_yaml = glob.glob(os.path.join(dataset_dir, "Fusion", "*.yaml"))
     if fusion_yaml:
@@ -331,7 +247,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
 
  
 
-    # 5. Lidar1/default/*.yaml
+    # 5. Lidar1/**/*.yaml
     lidar1_roi = glob.glob(os.path.join(dataset_dir, "Lidar1", group_name, "*.yaml"))
     if not lidar1_roi:
         lidar1_roi = glob.glob(os.path.join(dataset_dir, "Lidar1", "*.yaml"))
@@ -349,7 +265,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         meta_group_data["metas"].append(lidar1_roi_json)
     
 
-    # 6. Lidar2/default/*.yaml
+    # 6. Lidar2/**/*.yaml
     lidar2_roi = glob.glob(os.path.join(dataset_dir, "Lidar2", group_name, "*.yaml"))
     if not lidar2_roi:
         lidar2_roi = glob.glob(os.path.join(dataset_dir, "Lidar2", "*.yaml"))
@@ -366,7 +282,7 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
         }
         meta_group_data["metas"].append(lidar2_roi_json)
 
-    # 7. ParamServer/default/params_*.yaml
+    # 7. ParamServer/**/params_*.yaml
     param_dir = glob.glob(os.path.join(dataset_dir, "ParamServer", group_name,"*.yaml"))
     if not param_dir:
         param_dir = glob.glob(os.path.join(dataset_dir, "ParamServer", "*.yaml"))
@@ -412,7 +328,21 @@ def upload_metadata_to_scene(innopc_ids, scene_id,dataset_dir,dataset_name,group
             meta_group_data["metas"].append(label_zone_json)
     else:
         print("[⚠️] 未找到 LabelZone YAML 文件")
-    
+        
+    #10. other, scene_config.yaml
+    scene_config_id = None
+    scene_config = glob.glob(os.path.join(dataset_dir, "**", "scene_config.yaml"), recursive=True)
+    if scene_config:
+        scene_config_id = upload_meta_file_get_attach_id(scene_config[0])
+    else:
+        print("[⚠️] 未找到 Fusion YAML")
+    if scene_config_id:
+        scene_config_json =  {
+        "attachId": scene_config_id,
+        "type": "other"
+        }       
+        meta_group_data["metas"].append(scene_config_json)
+        
     metadata_json = json.dumps(meta_group_data)
     print(f"[信息] 准备上传元数据到场景 ID {scene_id}")
     print(f"[信息] 元数据 JSON: {metadata_json}")
@@ -462,31 +392,93 @@ def process_dataset(dataset_name ,dataset_dir):
     if zip_files:
         print(f"[信息] 找到以下 .zip 文件: {zip_files}")
         gt_file = zip_files[0]
-       
-        
-        
         upload_gt(gt_file,requirement_id)
     else:
         print("[⚠️] 未找到 .zip GT文件")
+    manual = False
+    for group_name, group_id in group_records:
+        event_csv_files = glob.glob(os.path.join(dataset_dir, "event_gt", group_name, "*.csv"))
+        for event_csv_file in event_csv_files:
+            event_type = None
+            if event_csv_file.endswith("advance_detection.csv"):
+                event_type = "advance_detection"
+            elif event_csv_file.endswith("stop_bar.csv"):
+                event_type = "stop_bar"
+            else:
+                print(f"[⚠️] 未知的事件文件类型: {event_csv_file}")
+                continue    
+            print(f"[信息] 处理事件文件: {event_csv_file} for group: {group_name}")
+              
+            upload_event_by_group(requirement_id,event_csv_file,event_type,group_id,manual)
+            
+def upload_event_by_group(equirement_id,event_csv_file,event_type,group_id,manual=False):
+    
+    print(f"\n🔧 [上传 Event 文件] 文件: {event_csv_file}, 需求 ID: {equirement_id}, 事件类型: {event_type}")
+    file_name = os.path.basename(event_csv_file)
+    
+    try:    
+        # 构造 multipart/form-data 请求
+        url = "http://localhost/dmapi/cognition-truth/upload"
+        data = {
+            "requirementId": equirement_id,
+            "eventType": event_type,
+            "groupId": group_id,
+            "manual": manual
+        }
+        
+        with open(event_csv_file, 'rb') as f:
+            files = {'file': (file_name, f, 'text/csv')}
+            response = requests.post(url, data=data, files=files)
+            print(response.text)
+            print(f"[信息] 状态码: {response.status_code}")
+            if response.status_code == 200:
+                print("[信息] Event 文件提交成功")
+                return True
+            else:
+                print(f"[错误] Event 文件提交失败，状态码: {response.status_code}")
+                return False
+    except Exception as e:
+        print(f"[错误] 上传 Event 文件时发生错误: {e}")
+        return False    
+    
+    
 
         
-    
-    for group_name, group_id in group_records:
-        event_zip = glob.glob(os.path.join(dataset_dir, "event_gt", group_name, "*.csv"))
-        upload_event_by_group()
-            
-
+    return
 
 def upload_gt(gt_file, requirement_id):
     """
     上传 GT 文件到后端接口
-    :param file: GT zip文件路径
-    :param requirement_id: 需求 ID
-    :return: 上传结果（成功或失败）
+    param file: GT zip文件路径
+    param requirement_id: 需求 ID
+    return: 上传结果（成功或失败）
     """
     print(f"\n🔧 [上传 GT 文件] 文件: {gt_file}, 需求 ID: {requirement_id}")
     # bucket_name = "gt-files"
     file_name = os.path.basename(gt_file)
+    # 解压gt_file,遍历其中.txt文件的数量作为frame_count,汇总每个.txt文件中的行数（每行为一个box）作为box_count。
+    # 如果gt_file中没有.txt文件，则box_count和frame_count为-1 ，最后删除解压的文件夹
+    box_count = 0
+    frame_count = 0
+    import zipfile
+    import shutil
+    temp_extract_dir = os.path.join(os.path.dirname(gt_file), "temp_gt_extract")
+    try:
+        with zipfile.ZipFile(gt_file, 'r') as zip_ref:
+            zip_ref.extractall(temp_extract_dir)
+        txt_files = glob.glob(os.path.join(temp_extract_dir, "**", "*.txt"), recursive=True)
+        frame_count = len(txt_files)
+        for txt_file in txt_files:
+            with open(txt_file, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+                box_count += len(lines)
+        print(f"[信息] 计算得到 frame_count: {frame_count}, box_count: {box_count}")
+    except Exception as e:
+        print(f"[错误] 计算 GT 文件信息失败: {e}")
+    finally:
+        if os.path.isdir(temp_extract_dir):
+            shutil.rmtree(temp_extract_dir)       
+    
     
     try:
 
@@ -494,8 +486,8 @@ def upload_gt(gt_file, requirement_id):
         url = "http://localhost/dmapi/perception-truth/upload"
         data = {
             "requirementId": requirement_id,
-            "boxCount": -1,
-            "frameCount": -1
+            "boxCount": box_count,
+            "frameCount": frame_count
         }
         
         with open(gt_file, 'rb') as f:
@@ -516,10 +508,7 @@ def upload_gt(gt_file, requirement_id):
         return False
         
 
-def upload_event_by_group():
-    print("\n🔧 [上传 Event GT 文件 demo]")
-        
-    return
+
 
 def create_requirements(dataset_name, group_id, scene_id):
     '''
@@ -688,17 +677,32 @@ def main():
         print(f"[错误] 数据集根目录不存在: {BASE_DIR}")
         return
     innopc_empty_folder = os.path.join(os.getcwd(), "analysis/innopc_empty.txt")
+    # 预加载 innopc_empty.txt 文件内容到集合
+    with open(innopc_empty_folder, "r") as f:
+        empty_innopc_set = set(line.strip() for line in f)
+    
+    
+    processed_folder = os.path.join(os.getcwd(), "analysis/processed_datasets.txt")
+    # 预加载 innopc_empty.txt 文件内容到集合
+    with open(processed_folder, "r") as f:
+        processed_set = set(line.strip() for line in f)
+        
     # 遍历 BASE_DIR 下的每个数据集文件夹（如 A01_001_2_FK_S）
     for item in os.listdir(BASE_DIR):
         dataset_path = os.path.join(BASE_DIR, item)
         #  !!!只运行一次 检查 Lidar1 和 Lidar2 目录下是否有 .inno_pc 文件, 生成 analysis/innopc_empty.txt
         # check_inno_pc_files(dataset_path,innopc_empty_folder)
-        is_empty_innopc = os.path.basename(dataset_path) not in open(innopc_empty_folder, "r").read().splitlines()
-        
-        if os.path.isdir(dataset_path) and is_empty_innopc:
+        not_empty_innopc = os.path.basename(dataset_path) not in empty_innopc_set
+        not_processed = os.path.basename(dataset_path) not in processed_set
+        if os.path.isdir(dataset_path) and not_empty_innopc and not_processed:
             #  !!!只运行一次 meta group 分析， 生成 analysis/meta_group_analysis.txt 和 analysis/not_handle_yet.txt
             # meta_group_analysis(dataset_path)   
             process_dataset(item,dataset_path)
+            # 把item追加到 analysis/processed_datasets.txt 文件中，表示已经处理过该数据集
+            processed_datasets_file = os.path.join(os.getcwd(), "analysis/processed_datasets.txt")
+            with open(processed_datasets_file, "a") as f:
+                f.write(item + "\n")
+            print(f"[信息] 数据集处理完成: {dataset_path}") 
         else:
             print(f"[跳过] 空目录或者缺失 innopc 文件: {dataset_path}")
         
