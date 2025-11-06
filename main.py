@@ -529,8 +529,8 @@ def create_requirements(dataset_name, group_id, scene_id):
         with connection.cursor() as cursor:
             # 插入数据到 ad_sl_requirement 表
             requirement_sql = """
-                INSERT INTO ad_sl_requirement (name, config_id, priority, simpl_version, lost_info, create_time, update_time)
-                VALUES (%s, %s, %s, %s, %s, NOW(), NOW())
+                INSERT INTO ad_sl_requirement (name, config_id, priority, simpl_version, lost_info, create_time, update_time,is_deleted)
+                VALUES (%s, %s, %s, %s, %s, NOW(), NOW(),1)
             """
             cursor.execute(requirement_sql, (
                 f"{dataset_name}_demand",  # name
